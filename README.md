@@ -17,10 +17,10 @@ RKE2 Cluster (3 CP + 3 Worker)
 
 ## Deployment Steps
 1. Ensure the RKE2 cluster is running and kubectl is properly configured
-2. Apply MetalLB:  
-	$ kubectl apply -f metallb/
-3. Apply Ingress Controller:
-	$ kubectl apply -f ingress-nginx/
-4. Deploy app
-	$ kubectl apply -f apps/php56-legacy/
+2. Apply MetalLB:
+	$ kubectl apply -f metallb
+4. Apply Ingress Controller:
+	$ kubectl apply -f ingress-nginx
+6. Deploy app
+	$ kubectl apply -f apps/php56-legacy
 

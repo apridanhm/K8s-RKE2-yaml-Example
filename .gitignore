@@ -1,0 +1,6 @@
+*.log
+*.tmp
+.env
+kubeconfig
+*.key
+*.crt

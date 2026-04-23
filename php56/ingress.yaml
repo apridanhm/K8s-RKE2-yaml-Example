@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: php56-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: php56.lab.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: legacy-nginx
+            port:
+              number: 80

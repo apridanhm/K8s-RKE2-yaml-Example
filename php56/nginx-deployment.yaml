@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy-nginx
+  labels:
+    app: legacy-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legacy-nginx
+  template:
+    metadata:
+      labels:
+        app: legacy-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.18
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-conf
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: legacy-nginx-conf

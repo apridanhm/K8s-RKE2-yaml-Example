@@ -11,16 +11,16 @@ Dibangun di atas Proxmox VE dengan fokus pada high availability, automated ingre
 - **Virtualization:** Proxmox VE
 
 ## Architecture
-[Internet] → HAProxy (External LB) → MetalLB → Ingress-NGINX → Pods (php56/nginx)
+[Internet] → HAProxy (External LB) → MetalLB → Ingress-NGINX → Pods (php56/nginx)  
 ↑
 RKE2 Cluster (3 CP + 3 Worker)
 
 ## Deployment Steps
 1. Ensure the RKE2 cluster is running and kubectl is properly configured
-2. Apply MetalLB:
+2. Apply MetalLB:  
 	$ kubectl apply -f metallb
-4. Apply Ingress Controller:
+4. Apply Ingress Controller:  
 	$ kubectl apply -f ingress-nginx
-6. Deploy app
+6. Deploy app:  
 	$ kubectl apply -f apps/php56-legacy
 
